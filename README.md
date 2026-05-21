@@ -1,13 +1,26 @@
+
+
+
+<div align="center">
+
 ![Java](https://img.shields.io/badge/Java-11+-blue?logo=java)
 ![JavaFX](https://img.shields.io/badge/JavaFX-21-blue?logo=openjdk)
 ![Maven](https://img.shields.io/badge/Maven-3.6+-blue?logo=apache-maven)
 ![License](https://img.shields.io/badge/License-MIT-green)
+
+</div>
+
+
+
+
 
 # Hotel Management System
 
 A comprehensive Java-based hotel management system(Management-side) with a **JavaFX GUI** for managing reservations, rooms, staff, and financial operations. This system provides dual-access portals for both guests and administrators with features including booking management, room inventory, staff authentication, and financial reporting.
 
 **Note:** This is an educational/demo project for learning purposes.
+
+
 
 ## Features
 
@@ -40,6 +53,8 @@ all screens.
 Fixed JavaFX background scaling to fully cover the application window. Removed default JavaFX white borders, 
 separators, and viewport backgrounds. Eliminated unwanted container outlines and optimized transparency blending.
 
+
+
 ## Administrative Workflow Expansion
 
 Expanded the Admin Dashboard into a more realistic management system by adding workflow action panels:
@@ -65,6 +80,8 @@ Create Cleaning Tasks
 Room Status
 Maintenance Requests
 ```
+
+
 
 ## 🚹 Room Categories & Pricing
 
@@ -236,6 +253,8 @@ hotelmanagementsystem/
 └── README.md
 ```
 
+
+
 ## ⚠️Key Policies
 
 - **Guest Age Requirement:** Minimum 18 years old
@@ -243,6 +262,8 @@ hotelmanagementsystem/
 - **Check-out Time:** 11:00 AM - UNIVERSALLY ACCEPTED CHECK-OUT TIME
 - **Booking Validation:** Check-out date must be after check-in date
 - **Room Conflicts:** System prevents double-booking of rooms
+
+
 
 ## Architecture
 
@@ -254,6 +275,8 @@ The system follows a **Layered Architecture** pattern:
 
 See [ARCHITECTURE.md](ARCHITECTURE.md) for detailed system design.
 
+
+
 ## ⚙️Technology Stack
 
 - **Language:** Java 21+ (for JavaFX support)
@@ -262,6 +285,8 @@ See [ARCHITECTURE.md](ARCHITECTURE.md) for detailed system design.
 - **Testing Framework:** JUnit 4
 - **Date/Time:** Java Time API
 - **Data Storage:** In-memory collections (ArrayList, HashMap)
+
+
 
 ## Testing
 
@@ -285,17 +310,12 @@ mvn test -Dtest=TestClassName
 - [ ] Advanced reporting analytics
 - [ ] Customer loyalty program
 
-## 🆘Contributing
 
-1. Fork the repository
-2. Create a feature branch (`git checkout -b feature/AmazingNewFeature`)
-3. Commit changes (`git commit -m 'Add AmazingNewFeature'`)
-4. Push to branch (`git push origin feature/AmazingNewFeature`)
-5. Open a Pull Request
 
 ## 📜License
 
 This project is licensed under the MIT License - see [LICENSE] file for details.
+
 
 ## 🤝Support
 

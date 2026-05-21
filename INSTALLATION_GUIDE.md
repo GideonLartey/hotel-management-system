@@ -1,7 +1,18 @@
 
+
+
+<div align="center">
+
 ![Java](https://img.shields.io/badge/Java-11+-blue?logo=java)
 ![JavaFX](https://img.shields.io/badge/JavaFX-21-blue?logo=openjdk)
 ![Maven](https://img.shields.io/badge/Maven-3.6+-blue?logo=apache-maven)
+![License](https://img.shields.io/badge/License-MIT-green)
+
+</div>
+
+
+
+
 
 
 

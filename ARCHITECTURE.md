@@ -1,7 +1,21 @@
+
+
+
+<div align="center">
+
 ![Java](https://img.shields.io/badge/Java-11+-blue?logo=java)
 ![JavaFX](https://img.shields.io/badge/JavaFX-21-blue?logo=openjdk)
 ![Maven](https://img.shields.io/badge/Maven-3.6+-blue?logo=apache-maven)
 ![License](https://img.shields.io/badge/License-MIT-green)
+
+</div>
+
+
+
+
+
+
+
 
 
 # Hotel Management System - Architecture
@@ -211,6 +225,8 @@ Customer → Search Availability → Create Booking → Check-in → Check-out
    └─ Trigger housekeeping notification
 ```
 
+
+
 ### Authentication Flow
 
 ```
@@ -228,6 +244,7 @@ Success → Set loggedInUser / Failure → Deny access
     ↓
 Access Admin Dashboard
 ```
+
 
 ## Design Patterns Used
 
@@ -270,6 +287,7 @@ if (!checkOutDate.isAfter(checkInDate)) {
 }
 ```
 
+
 ## Key Business Rules
 
 | Rule | Implementation |
@@ -282,6 +300,7 @@ if (!checkOutDate.isAfter(checkInDate)) {
 | Staff authentication | StaffManager verifies username/password |
 | Active staff only | Methods check isActive flag |
 
+
 ## Performance Considerations
 
 ### Current Implementation
@@ -289,6 +308,8 @@ if (!checkOutDate.isAfter(checkInDate)) {
 - **O(1) staff lookup** via HashMap by ID
 - **O(n) room availability check** (acceptable for typical hotel size)
 - **O(n) booking search** (could be optimized with tree structure)
+
+
 
 ### Future Optimizations
 ```
@@ -305,6 +326,8 @@ if (!checkOutDate.isAfter(checkInDate)) {
   - B-trees for date range queries
   - Trie for username autocomplete
 ```
+
+
 
 ## Security Considerations
 
@@ -390,6 +413,7 @@ room.standard.price=80
 room.deluxe.price=150
 ```
 
+
 ## Dependencies
 
 ```xml
@@ -403,6 +427,7 @@ room.deluxe.price=150
   </dependency>
 </dependencies>
 ```
+
 
 ## Future Enhancements
 
