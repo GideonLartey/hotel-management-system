@@ -44,6 +44,7 @@ separators, and viewport backgrounds. Eliminated unwanted container outlines and
 
 Expanded the Admin Dashboard into a more realistic management system by adding workflow action panels:
 
+```bash
 # Staff Management
 Add Staff
 Assign Roles
@@ -63,6 +64,7 @@ Export Reports
 Create Cleaning Tasks
 Room Status
 Maintenance Requests
+```
 
 ## 🚹 Room Categories & Pricing
 
