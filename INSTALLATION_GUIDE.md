@@ -124,7 +124,7 @@ cd ~/Projects  # or your preferred directory
 
 #### 2. Clone the repository
 ```bash
-git clone https://github.com/DeonLondn/hotelmanagementsystem.git
+git clone https://github.com/GideonLartey/hotel-management-system.git
 cd hotelmanagementsystem
 ```
 
@@ -383,8 +383,8 @@ To remove the application:
 
 ```bash
 # Remove project directory:
-rm -rf ~/Projects/hotelmanagementsystem  # macOS/Linux
-rmdir /s C:\Users\YourUsername\Projects\hotelmanagementsystem  # Windows
+rm -rf ~/Projects/hotel-management-system  # macOS/Linux
+rmdir /s C:\Users\YourUsername\Projects\hotel-management-system  # Windows
 
 # Optional: Remove Maven cache:
 rm -rf ~/.m2/repository

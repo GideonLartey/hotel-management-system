@@ -127,7 +127,7 @@ Maintenance Requests
 
 ### 1. Clone the Repository
 ```bash
-git clone https://github.com/DeonLondn/hotelmanagementsystem.git
+git clone https://github.com/GideonLartey/hotel-management-system.git
 cd hotelmanagementsystem
 ```
 
@@ -348,8 +348,8 @@ For issues and questions:
 
 ## 📚 Authors
 
-- **Developer:** Gideon Lartey (DeonLondn)
-- **Last Updated:** May 2026
+- **Developer:** Gideon Lartey (aka DeonLondn)
+
 
 ---
 
