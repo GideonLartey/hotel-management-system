@@ -128,7 +128,7 @@ public class BookingManager {
         double effectiveCostPerNight = (roomType != null) ? roomType.getCostPerNight() : costPerNight;
         double flatAmount = (effectiveCostPerNight * nights) + costWithExtraCatering;
         double appliedDiscount = 0.0;
-        if (guestType == GuestType.VVIP_GUEST && seasonType == SeasonType.SPECIAL || seasonType == SeasonType.SLOW_BUSINESS_DAYS) {
+        if (guestType == GuestType.VVIP_GUEST && (seasonType == SeasonType.SPECIAL || seasonType == SeasonType.SLOW_BUSINESS_DAYS)) {
             appliedDiscount = discount;
         }
         return flatAmount * (1 - appliedDiscount);

@@ -160,6 +160,10 @@ public class Booking implements Serializable {
         return hasCheckedOut;
     }
 
+    public void setCheckedOut(boolean checkedOut) {
+        this.hasCheckedOut = checkedOut;
+    }
+
     @Override
     public int hashCode() {
         return (guestName + guestPhoneNumber + guestID).hashCode();

@@ -86,3 +86,37 @@ Thumbs.db
 # Application Generated Files
 *.ser
 generated-sources/
+
+# ============================================
+# C# / .NET
+# ============================================
+
+# Build output
+LantelHotelApp/src/**/bin/
+LantelHotelApp/src/**/obj/
+
+# Publish output (self-contained .exe is ~162MB )
+LantelHotelApp/publish/
+
+# Installer output 
+LantelHotelApp/installer/
+
+# NuGet
+*.nupkg
+*.snupkg
+.nuget/
+**/packages/
+
+# User-specific files
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+
+# Visual Studio
+.vs/
+*.csproj.user
+
+# Rider
+.idea/
+*.sln.iml

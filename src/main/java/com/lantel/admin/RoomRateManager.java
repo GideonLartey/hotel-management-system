@@ -18,15 +18,30 @@ public class RoomRateManager {
     }
 
     private void initializeDefaultRates() {
-        // Regular Rates
-        rateMap.put("SINGLE_REGULAR", 50.0);
-        rateMap.put("SINGLE_PEAK", 75.0);
-        rateMap.put("DOUBLE_REGULAR", 80.0);
-        rateMap.put("DOUBLE_PEAK", 120.0);
-        rateMap.put("SUITE_REGULAR", 150.0);
-        rateMap.put("SUITE_PEAK", 225.0);
-        rateMap.put("DELUXE_REGULAR", 200.0);
-        rateMap.put("DELUXE_PEAK", 300.0);
+        // Standard Room Rates
+        rateMap.put("STANDARD_HIGH_DEMAND", 100.0);
+        rateMap.put("STANDARD_SLOW_BUSINESS_DAYS", 65.0);
+        rateMap.put("STANDARD_SPECIAL", 80.0);
+
+        // Deluxe Room Rates
+        rateMap.put("DELUXE_HIGH_DEMAND", 200.0);
+        rateMap.put("DELUXE_SLOW_BUSINESS_DAYS", 120.0);
+        rateMap.put("DELUXE_SPECIAL", 150.0);
+
+        // Executive Suite Rates
+        rateMap.put("EXECUTIVE_SUITE_HIGH_DEMAND", 400.0);
+        rateMap.put("EXECUTIVE_SUITE_SLOW_BUSINESS_DAYS", 240.0);
+        rateMap.put("EXECUTIVE_SUITE_SPECIAL", 300.0);
+
+        // VIP Suite Rates
+        rateMap.put("VIP_SUITE_HIGH_DEMAND", 650.0);
+        rateMap.put("VIP_SUITE_SLOW_BUSINESS_DAYS", 400.0);
+        rateMap.put("VIP_SUITE_SPECIAL", 500.0);
+
+        // VVIP Penthouse Suite Rates
+        rateMap.put("VVIP_PENTHOUSE_SUITE_HIGH_DEMAND", 1300.0);
+        rateMap.put("VVIP_PENTHOUSE_SUITE_SLOW_BUSINESS_DAYS", 800.0);
+        rateMap.put("VVIP_PENTHOUSE_SUITE_SPECIAL", 1000.0);
     }
 
     public double getRate(RoomType roomType, SeasonType seasonType) {

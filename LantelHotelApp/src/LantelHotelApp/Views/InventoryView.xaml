@@ -1,0 +1,39 @@
+<UserControl x:Class="LantelHotelApp.Views.InventoryView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    <Grid>
+        <Grid.Background><LinearGradientBrush StartPoint="0,0" EndPoint="1,1"><GradientStop Color="#1a1a2e" Offset="0"/><GradientStop Color="#0f3460" Offset="1"/></LinearGradientBrush></Grid.Background>
+        <StackPanel Margin="30,20">
+            <Button Content="← Back to Dashboard" Click="Back_Click" HorizontalAlignment="Left" Foreground="#AAFFFFFF" FontSize="12" Cursor="Hand" Margin="0,0,0,15">
+                <Button.Template><ControlTemplate TargetType="Button"><TextBlock Text="{TemplateBinding Content}" Foreground="#AAFFFFFF" FontSize="12"/></ControlTemplate></Button.Template>
+            </Button>
+            <TextBlock Text="📦 Room Inventory" FontSize="24" FontWeight="Bold" Foreground="#e6a817" Margin="0,0,0,15"/>
+            <DataGrid x:Name="DgInventory" AutoGenerateColumns="False" IsReadOnly="True" Background="Transparent" Foreground="White" BorderBrush="#44FFFFFF" RowBackground="#22000000" AlternatingRowBackground="#33000000" GridLinesVisibility="Horizontal" HorizontalGridLinesBrush="#22FFFFFF" HeadersVisibility="Column" MaxHeight="300">
+                <DataGrid.ColumnHeaderStyle><Style TargetType="DataGridColumnHeader"><Setter Property="Background" Value="#44000000"/><Setter Property="Foreground" Value="#e6a817"/><Setter Property="Padding" Value="10,6"/><Setter Property="FontWeight" Value="SemiBold"/></Style></DataGrid.ColumnHeaderStyle>
+                <DataGrid.Columns>
+                    <DataGridTextColumn Header="Item Type" Binding="{Binding ItemType}" Width="150"/>
+                    <DataGridTextColumn Header="Quantity" Binding="{Binding Quantity}" Width="100"/>
+                    <DataGridTextColumn Header="Threshold" Binding="{Binding LowStockThreshold}" Width="100"/>
+                    <DataGridCheckBoxColumn Header="Low Stock" Binding="{Binding IsLowStock}" Width="80"/>
+                </DataGrid.Columns>
+            </DataGrid>
+            <Border Background="#33000000" CornerRadius="12" Padding="20" BorderBrush="#44FFFFFF" BorderThickness="1" Margin="0,15,0,0">
+                <StackPanel>
+                    <TextBlock Text="Restock Item" FontSize="14" FontWeight="SemiBold" Foreground="#CCFFFFFF" Margin="0,0,0,10"/>
+                    <StackPanel Orientation="Horizontal">
+                        <ComboBox x:Name="CmbItem" Width="150" Height="35" FontSize="13" Margin="0,0,10,0"/>
+                        <TextBox x:Name="TxtQty" Width="80" Height="35" FontSize="13" Background="#22FFFFFF" Foreground="White" BorderBrush="#44FFFFFF" Padding="8,5" CaretBrush="White"/>
+                        <Button Content="Add Stock" Click="AddStock_Click" Margin="10,0,0,0" Height="35" Foreground="White" Cursor="Hand">
+                            <Button.Template>
+                                <ControlTemplate TargetType="Button"><Border x:Name="b" CornerRadius="6" Background="#88e6a817" Padding="15,5"><ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/></Border>
+                                    <ControlTemplate.Triggers><Trigger Property="IsMouseOver" Value="True"><Setter TargetName="b" Property="Background" Value="#AAe6a817"/></Trigger></ControlTemplate.Triggers>
+                                </ControlTemplate>
+                            </Button.Template>
+                        </Button>
+                    </StackPanel>
+                    <TextBlock x:Name="TxtStatus" Text="" FontSize="12" Margin="0,8,0,0" Visibility="Collapsed"/>
+                </StackPanel>
+            </Border>
+        </StackPanel>
+    </Grid>
+</UserControl>

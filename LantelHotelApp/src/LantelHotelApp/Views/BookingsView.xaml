@@ -1,0 +1,44 @@
+<UserControl x:Class="LantelHotelApp.Views.BookingsView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    <Grid>
+        <Grid.Background>
+            <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
+                <GradientStop Color="#1a1a2e" Offset="0"/><GradientStop Color="#0f3460" Offset="1"/>
+            </LinearGradientBrush>
+        </Grid.Background>
+        <StackPanel Margin="30,20">
+            <Button Content="← Back to Dashboard" Click="Back_Click" HorizontalAlignment="Left" Foreground="#AAFFFFFF" FontSize="12" Cursor="Hand" Margin="0,0,0,15">
+                <Button.Template><ControlTemplate TargetType="Button"><TextBlock Text="{TemplateBinding Content}" Foreground="#AAFFFFFF" FontSize="12"/></ControlTemplate></Button.Template>
+            </Button>
+            <TextBlock Text="📋 All Bookings" FontSize="24" FontWeight="Bold" Foreground="#e6a817" Margin="0,0,0,15"/>
+            <DataGrid x:Name="DgBookings" AutoGenerateColumns="False" IsReadOnly="True"
+                      Background="Transparent" Foreground="White" BorderBrush="#44FFFFFF"
+                      RowBackground="#22000000" AlternatingRowBackground="#33000000"
+                      GridLinesVisibility="Horizontal" HorizontalGridLinesBrush="#22FFFFFF"
+                      HeadersVisibility="Column" CanUserSortColumns="True"
+                      MaxHeight="500">
+                <DataGrid.ColumnHeaderStyle>
+                    <Style TargetType="DataGridColumnHeader">
+                        <Setter Property="Background" Value="#44000000"/>
+                        <Setter Property="Foreground" Value="#e6a817"/>
+                        <Setter Property="Padding" Value="10,6"/>
+                        <Setter Property="FontWeight" Value="SemiBold"/>
+                    </Style>
+                </DataGrid.ColumnHeaderStyle>
+                <DataGrid.Columns>
+                    <DataGridTextColumn Header="Ref" Binding="{Binding BookingReference}" Width="90"/>
+                    <DataGridTextColumn Header="Guest" Binding="{Binding Guest.Name}" Width="120"/>
+                    <DataGridTextColumn Header="Room" Binding="{Binding Room.RoomNumber}" Width="60"/>
+                    <DataGridTextColumn Header="Type" Binding="{Binding RoomType}" Width="90"/>
+                    <DataGridTextColumn Header="Check-In" Binding="{Binding CheckInDate, StringFormat=dd/MM/yyyy}" Width="90"/>
+                    <DataGridTextColumn Header="Check-Out" Binding="{Binding CheckOutDate, StringFormat=dd/MM/yyyy}" Width="90"/>
+                    <DataGridTextColumn Header="Total" Binding="{Binding TotalAmount, StringFormat=N2}" Width="80"/>
+                    <DataGridTextColumn Header="Paid" Binding="{Binding AmountPaid, StringFormat=N2}" Width="80"/>
+                    <DataGridCheckBoxColumn Header="In" Binding="{Binding IsCheckedIn}" Width="40"/>
+                    <DataGridCheckBoxColumn Header="Out" Binding="{Binding IsCheckedOut}" Width="40"/>
+                </DataGrid.Columns>
+            </DataGrid>
+        </StackPanel>
+    </Grid>
+</UserControl>

@@ -1,0 +1,100 @@
+<UserControl x:Class="LantelHotelApp.Views.GuestPortalView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    <Grid>
+        <Grid.Background>
+            <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
+                <GradientStop Color="#1a1a2e" Offset="0"/>
+                <GradientStop Color="#16213e" Offset="0.5"/>
+                <GradientStop Color="#0f3460" Offset="1"/>
+            </LinearGradientBrush>
+        </Grid.Background>
+        <ScrollViewer VerticalScrollBarVisibility="Auto" Padding="30">
+            <StackPanel Margin="20">
+                <Button Content="← Back to Dashboard" Click="Back_Click" HorizontalAlignment="Left"
+                        Foreground="#AAFFFFFF" FontSize="12" Cursor="Hand" Margin="0,0,0,15">
+                    <Button.Template>
+                        <ControlTemplate TargetType="Button">
+                            <TextBlock Text="{TemplateBinding Content}" Foreground="#AAFFFFFF" FontSize="12" Cursor="Hand"/>
+                        </ControlTemplate>
+                    </Button.Template>
+                </Button>
+                <TextBlock Text="👤 Guest Registration" FontSize="24" FontWeight="Bold" Foreground="#e6a817" Margin="0,0,0,20"/>
+
+                <Border Background="#33000000" CornerRadius="12" Padding="25" BorderBrush="#44FFFFFF" BorderThickness="1" Margin="0,0,0,15">
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
+                        <Grid.RowDefinitions>
+                            <RowDefinition/><RowDefinition/><RowDefinition/><RowDefinition/><RowDefinition/><RowDefinition/>
+                            <RowDefinition/><RowDefinition/><RowDefinition/><RowDefinition/><RowDefinition/><RowDefinition/>
+                        </Grid.RowDefinitions>
+
+                        <TextBlock Grid.Row="0" Grid.Column="0" Text="Guest ID" Foreground="#CCFFFFFF" FontSize="12" Margin="0,0,0,5"/>
+                        <TextBox x:Name="TxtGuestId" Grid.Row="1" Grid.Column="0" Height="35" Margin="0,0,10,10" FontSize="13"
+                                 Background="#22FFFFFF" Foreground="White" BorderBrush="#44FFFFFF" Padding="8,5" CaretBrush="White"/>
+
+                        <TextBlock Grid.Row="0" Grid.Column="1" Text="Full Name" Foreground="#CCFFFFFF" FontSize="12" Margin="0,0,0,5"/>
+                        <TextBox x:Name="TxtGuestName" Grid.Row="1" Grid.Column="1" Height="35" Margin="10,0,0,10" FontSize="13"
+                                 Background="#22FFFFFF" Foreground="White" BorderBrush="#44FFFFFF" Padding="8,5" CaretBrush="White"/>
+
+                        <TextBlock Grid.Row="2" Grid.Column="0" Text="Age" Foreground="#CCFFFFFF" FontSize="12" Margin="0,0,0,5"/>
+                        <TextBox x:Name="TxtAge" Grid.Row="3" Grid.Column="0" Height="35" Margin="0,0,10,10" FontSize="13"
+                                 Background="#22FFFFFF" Foreground="White" BorderBrush="#44FFFFFF" Padding="8,5" CaretBrush="White"/>
+
+                        <TextBlock Grid.Row="2" Grid.Column="1" Text="Phone Number" Foreground="#CCFFFFFF" FontSize="12" Margin="0,0,0,5"/>
+                        <TextBox x:Name="TxtPhone" Grid.Row="3" Grid.Column="1" Height="35" Margin="10,0,0,10" FontSize="13"
+                                 Background="#22FFFFFF" Foreground="White" BorderBrush="#44FFFFFF" Padding="8,5" CaretBrush="White"/>
+
+                        <TextBlock Grid.Row="4" Grid.Column="0" Text="Email (optional)" Foreground="#CCFFFFFF" FontSize="12" Margin="0,0,0,5"/>
+                        <TextBox x:Name="TxtEmail" Grid.Row="5" Grid.Column="0" Height="35" Margin="0,0,10,10" FontSize="13"
+                                 Background="#22FFFFFF" Foreground="White" BorderBrush="#44FFFFFF" Padding="8,5" CaretBrush="White"/>
+
+                        <TextBlock Grid.Row="4" Grid.Column="1" Text="Room Type" Foreground="#CCFFFFFF" FontSize="12" Margin="0,0,0,5"/>
+                        <ComboBox x:Name="CmbRoomType" Grid.Row="5" Grid.Column="1" Height="35" Margin="10,0,0,10" FontSize="13"/>
+
+                        <TextBlock Grid.Row="6" Grid.Column="0" Text="Guest Type" Foreground="#CCFFFFFF" FontSize="12" Margin="0,0,0,5"/>
+                        <ComboBox x:Name="CmbGuestType" Grid.Row="7" Grid.Column="0" Height="35" Margin="0,0,10,10" FontSize="13"/>
+
+                        <TextBlock Grid.Row="6" Grid.Column="1" Text="Season" Foreground="#CCFFFFFF" FontSize="12" Margin="0,0,0,5"/>
+                        <ComboBox x:Name="CmbSeason" Grid.Row="7" Grid.Column="1" Height="35" Margin="10,0,0,10" FontSize="13"/>
+
+                        <TextBlock Grid.Row="8" Grid.Column="0" Text="Check-In Date" Foreground="#CCFFFFFF" FontSize="12" Margin="0,0,0,5"/>
+                        <DatePicker x:Name="DpCheckIn" Grid.Row="9" Grid.Column="0" Height="35" Margin="0,0,10,10" FontSize="13"/>
+
+                        <TextBlock Grid.Row="8" Grid.Column="1" Text="Check-Out Date" Foreground="#CCFFFFFF" FontSize="12" Margin="0,0,0,5"/>
+                        <DatePicker x:Name="DpCheckOut" Grid.Row="9" Grid.Column="1" Height="35" Margin="10,0,0,10" FontSize="13"/>
+
+                        <TextBlock x:Name="TxtStatus" Grid.Row="10" Grid.ColumnSpan="2" Text="" Foreground="#4ade80" FontSize="12"
+                                   TextWrapping="Wrap" Margin="0,5,0,5" Visibility="Collapsed"/>
+
+                        <Button x:Name="BtnBook" Grid.Row="11" Grid.ColumnSpan="2" Content="Create Booking"
+                                Click="CreateBooking_Click" Height="42" FontSize="14" FontWeight="SemiBold"
+                                Foreground="White" Cursor="Hand" Margin="0,5,0,0">
+                            <Button.Template>
+                                <ControlTemplate TargetType="Button">
+                                    <Border x:Name="border" CornerRadius="8">
+                                        <Border.Background>
+                                            <LinearGradientBrush StartPoint="0,0" EndPoint="1,0">
+                                                <GradientStop Color="#e6a817" Offset="0"/>
+                                                <GradientStop Color="#ff6b35" Offset="1"/>
+                                            </LinearGradientBrush>
+                                        </Border.Background>
+                                        <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                                    </Border>
+                                    <ControlTemplate.Triggers>
+                                        <Trigger Property="IsMouseOver" Value="True">
+                                            <Setter TargetName="border" Property="Opacity" Value="0.85"/>
+                                        </Trigger>
+                                    </ControlTemplate.Triggers>
+                                </ControlTemplate>
+                            </Button.Template>
+                        </Button>
+                    </Grid>
+                </Border>
+            </StackPanel>
+        </ScrollViewer>
+    </Grid>
+</UserControl>

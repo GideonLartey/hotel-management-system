@@ -1,0 +1,12 @@
+<Window x:Class="LantelHotelApp.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Lantel Hotel Management System"
+        Width="1100" Height="750"
+        MinWidth="900" MinHeight="600"
+        WindowStartupLocation="CenterScreen"
+        Background="#1a1a2e">
+    <Grid>
+        <ContentControl x:Name="MainContent"/>
+    </Grid>
+</Window>

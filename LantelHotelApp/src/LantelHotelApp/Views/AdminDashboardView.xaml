@@ -1,0 +1,246 @@
+<UserControl x:Class="LantelHotelApp.Views.AdminDashboardView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    <Grid>
+        <Grid.Background>
+            <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
+                <GradientStop Color="#1a1a2e" Offset="0"/>
+                <GradientStop Color="#16213e" Offset="0.5"/>
+                <GradientStop Color="#0f3460" Offset="1"/>
+            </LinearGradientBrush>
+        </Grid.Background>
+
+        <ScrollViewer VerticalScrollBarVisibility="Auto" Padding="30">
+            <StackPanel Margin="20">
+                <!-- Header -->
+                <Grid Margin="0,0,0,25">
+                    <StackPanel>
+                        <TextBlock Text="🏨 Lantel Hotel" FontSize="28" FontWeight="Bold" Foreground="#e6a817"/>
+                        <TextBlock x:Name="TxtWelcome" FontSize="14" Foreground="#AAFFFFFF" Margin="0,5,0,0"/>
+                    </StackPanel>
+                    <Button x:Name="BtnLogout" Content="🚪 Sign Out" Click="Logout_Click"
+                            HorizontalAlignment="Right" VerticalAlignment="Top"
+                            Foreground="White" FontSize="12" Cursor="Hand" Padding="12,6">
+                        <Button.Template>
+                            <ControlTemplate TargetType="Button">
+                                <Border x:Name="border" CornerRadius="6" Background="#33FFFFFF" Padding="12,6"
+                                        BorderBrush="#44FFFFFF" BorderThickness="1">
+                                    <ContentPresenter HorizontalAlignment="Center"/>
+                                </Border>
+                                <ControlTemplate.Triggers>
+                                    <Trigger Property="IsMouseOver" Value="True">
+                                        <Setter TargetName="border" Property="Background" Value="#55FFFFFF"/>
+                                    </Trigger>
+                                </ControlTemplate.Triggers>
+                            </ControlTemplate>
+                        </Button.Template>
+                    </Button>
+                </Grid>
+
+                <!-- Stats Cards Row -->
+                <UniformGrid Rows="1" Columns="4" Margin="0,0,0,25">
+                    <Border x:Name="CardRooms" Background="#33000000" CornerRadius="12" Padding="20" Margin="0,0,8,0"
+                            BorderBrush="#44FFFFFF" BorderThickness="1">
+                        <StackPanel>
+                            <TextBlock Text="🛏️" FontSize="28"/>
+                            <TextBlock x:Name="TxtAvailableRooms" Text="0" FontSize="32" FontWeight="Bold" Foreground="#4ade80"/>
+                            <TextBlock Text="Available Rooms" Foreground="#AAFFFFFF" FontSize="11"/>
+                        </StackPanel>
+                    </Border>
+                    <Border Background="#33000000" CornerRadius="12" Padding="20" Margin="4,0"
+                            BorderBrush="#44FFFFFF" BorderThickness="1">
+                        <StackPanel>
+                            <TextBlock Text="📊" FontSize="28"/>
+                            <TextBlock x:Name="TxtOccupancy" Text="0%" FontSize="32" FontWeight="Bold" Foreground="#e6a817"/>
+                            <TextBlock Text="Occupancy Rate" Foreground="#AAFFFFFF" FontSize="11"/>
+                        </StackPanel>
+                    </Border>
+                    <Border Background="#33000000" CornerRadius="12" Padding="20" Margin="4,0"
+                            BorderBrush="#44FFFFFF" BorderThickness="1">
+                        <StackPanel>
+                            <TextBlock Text="📋" FontSize="28"/>
+                            <TextBlock x:Name="TxtActiveBookings" Text="0" FontSize="32" FontWeight="Bold" Foreground="#60a5fa"/>
+                            <TextBlock Text="Active Bookings" Foreground="#AAFFFFFF" FontSize="11"/>
+                        </StackPanel>
+                    </Border>
+                    <Border Background="#33000000" CornerRadius="12" Padding="20" Margin="8,0,0,0"
+                            BorderBrush="#44FFFFFF" BorderThickness="1">
+                        <StackPanel>
+                            <TextBlock Text="💰" FontSize="28"/>
+                            <TextBlock x:Name="TxtRevenue" Text="0.00" FontSize="24" FontWeight="Bold" Foreground="#fbbf24"/>
+                            <TextBlock Text="Total Revenue" Foreground="#AAFFFFFF" FontSize="11"/>
+                        </StackPanel>
+                    </Border>
+                </UniformGrid>
+
+                <!-- Navigation Tiles -->
+                <TextBlock Text="Quick Actions" FontSize="16" FontWeight="SemiBold" Foreground="#CCFFFFFF" Margin="0,0,0,12"/>
+                <UniformGrid Rows="2" Columns="4" Margin="0,0,0,15">
+                    <Button x:Name="BtnGuestPortal" Click="Navigate_Click" Tag="GuestPortal"
+                            Margin="0,0,8,8" Height="90" Cursor="Hand">
+                        <Button.Template>
+                            <ControlTemplate TargetType="Button">
+                                <Border x:Name="border" CornerRadius="10" Background="#33000000"
+                                        BorderBrush="#44FFFFFF" BorderThickness="1" Padding="15">
+                                    <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center">
+                                        <TextBlock Text="👤" FontSize="28" HorizontalAlignment="Center"/>
+                                        <TextBlock Text="Guest Portal" Foreground="#CCFFFFFF" FontSize="12"
+                                                   HorizontalAlignment="Center" Margin="0,5,0,0"/>
+                                    </StackPanel>
+                                </Border>
+                                <ControlTemplate.Triggers>
+                                    <Trigger Property="IsMouseOver" Value="True">
+                                        <Setter TargetName="border" Property="Background" Value="#44e6a817"/>
+                                    </Trigger>
+                                </ControlTemplate.Triggers>
+                            </ControlTemplate>
+                        </Button.Template>
+                    </Button>
+                    <Button x:Name="BtnBookings" Click="Navigate_Click" Tag="Bookings"
+                            Margin="4,0,4,8" Height="90" Cursor="Hand">
+                        <Button.Template>
+                            <ControlTemplate TargetType="Button">
+                                <Border x:Name="border" CornerRadius="10" Background="#33000000"
+                                        BorderBrush="#44FFFFFF" BorderThickness="1" Padding="15">
+                                    <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center">
+                                        <TextBlock Text="📋" FontSize="28" HorizontalAlignment="Center"/>
+                                        <TextBlock Text="Bookings" Foreground="#CCFFFFFF" FontSize="12"
+                                                   HorizontalAlignment="Center" Margin="0,5,0,0"/>
+                                    </StackPanel>
+                                </Border>
+                                <ControlTemplate.Triggers>
+                                    <Trigger Property="IsMouseOver" Value="True">
+                                        <Setter TargetName="border" Property="Background" Value="#44e6a817"/>
+                                    </Trigger>
+                                </ControlTemplate.Triggers>
+                            </ControlTemplate>
+                        </Button.Template>
+                    </Button>
+                    <Button x:Name="BtnCheckIn" Click="Navigate_Click" Tag="CheckIn"
+                            Margin="4,0,4,8" Height="90" Cursor="Hand">
+                        <Button.Template>
+                            <ControlTemplate TargetType="Button">
+                                <Border x:Name="border" CornerRadius="10" Background="#33000000"
+                                        BorderBrush="#44FFFFFF" BorderThickness="1" Padding="15">
+                                    <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center">
+                                        <TextBlock Text="✅" FontSize="28" HorizontalAlignment="Center"/>
+                                        <TextBlock Text="Check In" Foreground="#CCFFFFFF" FontSize="12"
+                                                   HorizontalAlignment="Center" Margin="0,5,0,0"/>
+                                    </StackPanel>
+                                </Border>
+                                <ControlTemplate.Triggers>
+                                    <Trigger Property="IsMouseOver" Value="True">
+                                        <Setter TargetName="border" Property="Background" Value="#44e6a817"/>
+                                    </Trigger>
+                                </ControlTemplate.Triggers>
+                            </ControlTemplate>
+                        </Button.Template>
+                    </Button>
+                    <Button x:Name="BtnCheckOut" Click="Navigate_Click" Tag="CheckOut"
+                            Margin="8,0,0,8" Height="90" Cursor="Hand">
+                        <Button.Template>
+                            <ControlTemplate TargetType="Button">
+                                <Border x:Name="border" CornerRadius="10" Background="#33000000"
+                                        BorderBrush="#44FFFFFF" BorderThickness="1" Padding="15">
+                                    <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center">
+                                        <TextBlock Text="🚪" FontSize="28" HorizontalAlignment="Center"/>
+                                        <TextBlock Text="Check Out" Foreground="#CCFFFFFF" FontSize="12"
+                                                   HorizontalAlignment="Center" Margin="0,5,0,0"/>
+                                    </StackPanel>
+                                </Border>
+                                <ControlTemplate.Triggers>
+                                    <Trigger Property="IsMouseOver" Value="True">
+                                        <Setter TargetName="border" Property="Background" Value="#44e6a817"/>
+                                    </Trigger>
+                                </ControlTemplate.Triggers>
+                            </ControlTemplate>
+                        </Button.Template>
+                    </Button>
+                    <Button x:Name="BtnRoomMgmt" Click="Navigate_Click" Tag="RoomManagement"
+                            Margin="0,0,8,0" Height="90" Cursor="Hand">
+                        <Button.Template>
+                            <ControlTemplate TargetType="Button">
+                                <Border x:Name="border" CornerRadius="10" Background="#33000000"
+                                        BorderBrush="#44FFFFFF" BorderThickness="1" Padding="15">
+                                    <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center">
+                                        <TextBlock Text="🏠" FontSize="28" HorizontalAlignment="Center"/>
+                                        <TextBlock Text="Rooms" Foreground="#CCFFFFFF" FontSize="12"
+                                                   HorizontalAlignment="Center" Margin="0,5,0,0"/>
+                                    </StackPanel>
+                                </Border>
+                                <ControlTemplate.Triggers>
+                                    <Trigger Property="IsMouseOver" Value="True">
+                                        <Setter TargetName="border" Property="Background" Value="#44e6a817"/>
+                                    </Trigger>
+                                </ControlTemplate.Triggers>
+                            </ControlTemplate>
+                        </Button.Template>
+                    </Button>
+                    <Button x:Name="BtnStaff" Click="Navigate_Click" Tag="StaffAccess"
+                            Margin="4,0,4,0" Height="90" Cursor="Hand">
+                        <Button.Template>
+                            <ControlTemplate TargetType="Button">
+                                <Border x:Name="border" CornerRadius="10" Background="#33000000"
+                                        BorderBrush="#44FFFFFF" BorderThickness="1" Padding="15">
+                                    <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center">
+                                        <TextBlock Text="👥" FontSize="28" HorizontalAlignment="Center"/>
+                                        <TextBlock Text="Staff Access" Foreground="#CCFFFFFF" FontSize="12"
+                                                   HorizontalAlignment="Center" Margin="0,5,0,0"/>
+                                    </StackPanel>
+                                </Border>
+                                <ControlTemplate.Triggers>
+                                    <Trigger Property="IsMouseOver" Value="True">
+                                        <Setter TargetName="border" Property="Background" Value="#44e6a817"/>
+                                    </Trigger>
+                                </ControlTemplate.Triggers>
+                            </ControlTemplate>
+                        </Button.Template>
+                    </Button>
+                    <Button x:Name="BtnFinancial" Click="Navigate_Click" Tag="FinancialReports"
+                            Margin="4,0,4,0" Height="90" Cursor="Hand">
+                        <Button.Template>
+                            <ControlTemplate TargetType="Button">
+                                <Border x:Name="border" CornerRadius="10" Background="#33000000"
+                                        BorderBrush="#44FFFFFF" BorderThickness="1" Padding="15">
+                                    <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center">
+                                        <TextBlock Text="💰" FontSize="28" HorizontalAlignment="Center"/>
+                                        <TextBlock Text="Financials" Foreground="#CCFFFFFF" FontSize="12"
+                                                   HorizontalAlignment="Center" Margin="0,5,0,0"/>
+                                    </StackPanel>
+                                </Border>
+                                <ControlTemplate.Triggers>
+                                    <Trigger Property="IsMouseOver" Value="True">
+                                        <Setter TargetName="border" Property="Background" Value="#44e6a817"/>
+                                    </Trigger>
+                                </ControlTemplate.Triggers>
+                            </ControlTemplate>
+                        </Button.Template>
+                    </Button>
+                    <Button x:Name="BtnHousekeeping" Click="Navigate_Click" Tag="Housekeeping"
+                            Margin="8,0,0,0" Height="90" Cursor="Hand">
+                        <Button.Template>
+                            <ControlTemplate TargetType="Button">
+                                <Border x:Name="border" CornerRadius="10" Background="#33000000"
+                                        BorderBrush="#44FFFFFF" BorderThickness="1" Padding="15">
+                                    <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center">
+                                        <TextBlock Text="🧹" FontSize="28" HorizontalAlignment="Center"/>
+                                        <TextBlock Text="Housekeeping" Foreground="#CCFFFFFF" FontSize="12"
+                                                   HorizontalAlignment="Center" Margin="0,5,0,0"/>
+                                    </StackPanel>
+                                </Border>
+                                <ControlTemplate.Triggers>
+                                    <Trigger Property="IsMouseOver" Value="True">
+                                        <Setter TargetName="border" Property="Background" Value="#44e6a817"/>
+                                    </Trigger>
+                                </ControlTemplate.Triggers>
+                            </ControlTemplate>
+                        </Button.Template>
+                    </Button>
+                </UniformGrid>
+
+                <TextBlock Text="© 2025 Lantel Hotel Management Suite / DeonLondn"
+                           Foreground="#44FFFFFF" FontSize="10" HorizontalAlignment="Center" Margin="0,20,0,0"/>
+            </StackPanel>
+        </ScrollViewer>
+    </Grid>
+</UserControl>

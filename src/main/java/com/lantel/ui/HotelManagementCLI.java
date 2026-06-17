@@ -163,7 +163,12 @@ public class HotelManagementCLI {
                     System.out.print("Full Name: ");
                     String name = scanner.nextLine().trim();
                     System.out.println("Role: 1=Manager  2=Receptionist  3=Housekeeper");
-                    String role = readInt("Select: ") == 1 ? "Manager" : (readInt("") == 2 ? "Receptionist" : "Housekeeper");
+                    int roleChoice = readInt("Select: ");
+                    String role = switch (roleChoice) {
+                        case 1 -> "Manager";
+                        case 2 -> "Receptionist";
+                        default -> "Housekeeper";
+                    };
                     
                     if (staffManager.addStaff(id, username, password, name, role)) {
                         System.out.println("✔ Staff added successfully!");
@@ -448,6 +453,13 @@ public class HotelManagementCLI {
         String guestID = scanner.nextLine().trim();
 
         if (guestBook.hasGuest(guestID)) {
+            // Mark the booking as checked out so revenue reports are accurate
+            for (Booking b : bookingList.getBookingList()) {
+                if (b.getGuestID().equals(guestID) && !b.hasCheckedOut()) {
+                    b.setCheckedOut(true);
+                    break;
+                }
+            }
             guestBook.removeGuest(guestID);
             System.out.println("Guest " + guestID + " has been successfully checked out. Thank you for staying!");
         } else {

@@ -13,14 +13,12 @@
 
 
 
-
 # Hotel Management System
 
-A comprehensive Java-based hotel management system(Management-side) with a **JavaFX GUI** for managing reservations, rooms, staff, and financial operations. This system provides dual-access portals for both guests and administrators with features including booking management, room inventory, staff authentication, and financial reporting.
+A comprehensive Java-based hotel management system(Management-side) with a **JavaFX GUI** for managing reservations, rooms, staff, and financial operations. Also includes a full-featured desktop application in the releases section of the repository built with C# WPF and .NET 8, evolved from the original Java demonstration project. Install the windows installer or run the portable(no install) application to visualize two different interfaces and UI using the same codebase.
+ This system provides dual-access portals for both guests and administrators with features including booking management, room inventory, staff authentication, and financial reporting.
 
 **Note:** This is an educational/demo project for learning purposes.
-
-
 
 
 
@@ -44,6 +42,18 @@ A comprehensive Java-based hotel management system(Management-side) with a **Jav
 
 
 
+## Support Project
+
+<div align="center">
+
+<img src="assets/gifs/star-project.gif" alt="Support The Project" width="800" />
+
+<p>
+<b>Click The ⭐ Star Button To Support The Project</b>
+<p>
+
+</div>
+
 
 ## Features
 
@@ -61,7 +71,10 @@ A comprehensive Java-based hotel management system(Management-side) with a **Jav
 - **Inventory Tracking** - Manage hotel supplies and amenities
 - **Dynamic Pricing** - Seasonal and promotional pricing management
 
-## 👦User Interface
+
+
+
+## 👦JAVA User Interface
 
 The application features a **professional JavaFX GUI** with:
 - ✅ Windows-like graphical interface
@@ -78,7 +91,63 @@ separators, and viewport backgrounds. Eliminated unwanted container outlines and
 
 
 
-## Administrative Workflow Expansion
+
+
+## WINDOWS DESKTOP WRAPPER(C# / WPF)
+This repository includes a C# WPF project used to package the Java-based Hotel Management System as a Windows desktop application and installer. The C# section of the project provides: native windows installer, windows application creation, application packaging and windows desktop integration.
+
+**✨FEATURES(UI)**
+
+- **User Authentication** — BCrypt password hashing, admin-managed staff access, role-based permissions (Manager / Receptionist / Housekeeper), account lockout after failed attempts
+- **Guest Management** — Full booking lifecycle: registration → payment → check-in → check-out
+- **Room Operations** — 25 rooms across 5 types, real-time availability search, date conflict detection
+- **Financial Reports** — Revenue tracking, occupancy rates, average room rates, completed booking history
+- **Housekeeping** — Cleaning records, room status transitions, cleaning log
+- **Inventory Management** — Stock tracking with low-stock alerts and restocking
+- **Dual Currency** — Switch between GH₵ (Ghana Cedi) and $ (US Dollar) at any time
+- **Rate Management** — Season-specific pricing matrix (Peak, Regular, Special, Slow Business, Holiday)
+- **SQLite Database** — All data persisted locally at `%APPDATA%/LantelHotel/hotel.db`
+
+**MAIN FILES**
+
+- App.xaml
+- MainWindow.xaml
+- MainWindow.xaml.cs
+- LantelHotelApp.csproj
+- setup.iss
+
+**💻SYSTEM REQUIREMENTS**
+- Windows 10/11 (64-bit)
+- No additional software required (self-contained .NET 8 runtime)
+
+
+
+### Build:
+
+```bash
+dotnet build 
+```
+
+### Run
+
+```bash
+dotnet run 
+```
+
+Publish
+
+```bash
+dotnet publish -c Release
+```
+
+**Create Installer**
+Install Inno Setup and compile:
+**setup.iss**
+
+
+
+
+## System-Wide Administrative Workflow Expansion
 
 Expanded the Admin Dashboard into a more realistic management system by adding workflow action panels:
 
@@ -116,18 +185,18 @@ Maintenance Requests
 | VIP Suite | $500 | Luxury experience |
 | Penthouse | $1000 | Ultimate luxury |
 
-## 🛠️System Requirements
+## 🛠️ JAVA System Requirements
 
 - **Java:** JDK 11 or higher (JavaFX requires Java 11+)
 - **Maven:** 3.6.0 or higher
 - **OS:** Windows, macOS, or Linux with graphical desktop
 - **RAM:** 512 MB minimum
 
-## 🚪Installation
+## 🚪JAVA Installation
 
 ### 1. Clone the Repository
 ```bash
-git clone https://github.com/GideonLartey/hotel-management-system.git
+git clone https://www.github.com/GideonLartey/hotel-management-system.git
 cd hotelmanagementsystem
 ```
 
@@ -196,7 +265,7 @@ java -jar target/hotelmanagementsystem-1.0-SNAPSHOT.jar
 
 
 
-## � Application Screenshots
+## 📸 Application Screenshots
 
 <div align="center">
 
@@ -233,6 +302,18 @@ java -jar target/hotelmanagementsystem-1.0-SNAPSHOT.jar
 <p>
 <b>Admin Dashboard</b> • <b>Financial Reports</b> • <b>Staff Management</b>
 </p>
+
+---
+
+### C# Windows Portable Application(no install)
+
+<img src="screenshots/exe-account-dashboard.png" width="250" alt="Exe Dashboard"/>
+<img src="screenshots/exe-home-screen.png" width="250" alt="Exe Home Screen"/>
+
+<p>
+<b>Exe Dashboard</b> • <b>Exe Home Screen</b> 
+</p>
+
 
 </div>
 
@@ -300,7 +381,7 @@ See [ARCHITECTURE.md](ARCHITECTURE.md) for detailed system design.
 
 
 
-## ⚙️Technology Stack
+## ⚙️JAVA Technology Stack
 
 - **Language:** Java 21+ (for JavaFX support)
 - **GUI Framework:** JavaFX 21
@@ -309,9 +390,17 @@ See [ARCHITECTURE.md](ARCHITECTURE.md) for detailed system design.
 - **Date/Time:** Java Time API
 - **Data Storage:** In-memory collections (ArrayList, HashMap)
 
+## ## 🛠️ C# Tech Stack
+C# / WPF / .NET 8 / SQLite (EF Core) / BCrypt / MVVM Architecture
 
 
-## Testing
+## Improvements
+
+- User authentication	- BCrypt auth -  OAuth/SSO/2FA
+- Database - SQLite (local)
+
+
+## JAVA Testing
 
 Run unit tests:
 ```bash
@@ -324,14 +413,17 @@ mvn test -Dtest=TestClassName
 ```
 
 ## 💭Future Enhancements
+To reach true industry-grade, the project would need the folowing enhancements:
 
-- [ ] Database integration (MySQL/PostgreSQL/ Supabase/ firebase)
+- [ ] Database integration (MySQL/Cloud PostgreSQL/ Supabase/ firebase)
 - [ ] Email notifications
-- [ ] Payment gateway integration
+- [ ] Payment gateway integration - Stripe/PayPal/POS terminal integration
 - [ ] Web-based UI
 - [ ] Mobile app
 - [ ] Advanced reporting analytics
 - [ ] Customer loyalty program
+- [ ] Audit logging - Full audit trail for compliance
+- [ ] Accessibility - WCAG compliance
 
 
 
