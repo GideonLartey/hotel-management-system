@@ -1,12 +1,14 @@
 
 
-
 <div align="center">
 
-![Java](https://img.shields.io/badge/Java-11+-blue?logo=java)
-![JavaFX](https://img.shields.io/badge/JavaFX-21-blue?logo=openjdk)
-![Maven](https://img.shields.io/badge/Maven-3.6+-blue?logo=apache-maven)
-![License](https://img.shields.io/badge/License-MIT-green)
+![Java](https://img.shields.io/badge/Java-11+-007396?logo=java&logoColor=white)
+![JavaFX](https://img.shields.io/badge/JavaFX-21-007396?logo=openjdk&logoColor=white)
+![Maven](https://img.shields.io/badge/Maven-3.6+-C71A36?logo=apache-maven&logoColor=white)
+![C%23](https://img.shields.io/badge/C%23-12.0-512BD4?logo=csharp&logoColor=white)
+![.NET](https://img.shields.io/badge/.NET-8.0-512BD4?logo=dotnet&logoColor=white)
+![Inno%20Setup](https://img.shields.io/badge/Inno%20Setup-Installer-FF6B00?logoColor=white)
+![License](https://img.shields.io/badge/License-MIT-22C55E)
 
 </div>
 
