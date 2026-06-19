@@ -370,7 +370,7 @@ The system follows a **Layered Architecture** pattern:
 - **Business Logic Layer** - Managers handling domain operations
 - **Model Layer** - Data entities (Guest, Booking, Room, etc.)
 
-See [ARCHITECTURE](https://github.com/GideonLartey/hotel-management-system) for detailed system design.
+See [ARCHITECTURE](https://github.com/GideonLartey/hotel-management-system/blob/main/ARCHITECTURE.md) for detailed system design.
 
 
 
@@ -416,13 +416,14 @@ To reach true industry-grade, the project would need the folowing enhancements:
 - [ ] Advanced reporting analytics
 - [ ] Customer loyalty program
 - [ ] Audit logging - Full audit trail for compliance
-- [ ] Accessibility - WCAG compliance
+- [ ] Accessibility - Web Content Accessibility Guidelines (WCAG) compliance
+- [ ] Caching - Redis
 
 
 
 ## 📜License
 
-This project is licensed under the MIT License - see [LICENSE](https://github.com/GideonLartey/hotel-management-system) file for details.
+This project is licensed under the MIT License - see [LICENSE](https://github.com/GideonLartey/hotel-management-system/blob/main/LICENSE) file for details.
 
 
 ## 🤝Support
