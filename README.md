@@ -12,14 +12,12 @@
 
 
 
-
 # Hotel Management System
 
 A comprehensive Java-based hotel management system(Management-side) with a **JavaFX GUI** for managing reservations, rooms, staff, and financial operations. Also includes a full-featured desktop application in the releases section of the repository built with C# WPF and .NET 8, evolved from the original Java demonstration project. Install the windows installer or run the portable(no install) application to visualize two different interfaces and UI using the same codebase.
  This system provides dual-access portals for both guests and administrators with features including booking management, room inventory, staff authentication, and financial reporting.
 
-**Note:** This is an educational/demo project for learning purposes.
-
+**Note:** This is an educational/demo project for learning purposes. It is not industry-grade
 
 
 
@@ -42,7 +40,7 @@ A comprehensive Java-based hotel management system(Management-side) with a **Jav
 
 
 
-## Support Project
+## Support The Project
 
 <div align="center">
 
@@ -73,8 +71,7 @@ A comprehensive Java-based hotel management system(Management-side) with a **Jav
 
 
 
-
-## 👦JAVA User Interface
+## 🍵JAVA USER INTERFACE
 
 The application features a **professional JavaFX GUI** with:
 - ✅ Windows-like graphical interface
@@ -91,9 +88,7 @@ separators, and viewport backgrounds. Eliminated unwanted container outlines and
 
 
 
-
-
-## WINDOWS DESKTOP WRAPPER(C# / WPF)
+## 🪟WINDOWS DESKTOP WRAPPER INTERFACE(C# / WPF)
 This repository includes a C# WPF project used to package the Java-based Hotel Management System as a Windows desktop application and installer. The C# section of the project provides: native windows installer, windows application creation, application packaging and windows desktop integration.
 
 **✨FEATURES(UI)**
@@ -143,8 +138,6 @@ dotnet publish -c Release
 **Create Installer**
 Install Inno Setup and compile:
 **setup.iss**
-
-
 
 
 ## System-Wide Administrative Workflow Expansion
@@ -377,7 +370,7 @@ The system follows a **Layered Architecture** pattern:
 - **Business Logic Layer** - Managers handling domain operations
 - **Model Layer** - Data entities (Guest, Booking, Room, etc.)
 
-See [ARCHITECTURE.md](ARCHITECTURE.md) for detailed system design.
+See [ARCHITECTURE](https://github.com/GideonLartey/hotel-management-system) for detailed system design.
 
 
 
@@ -429,13 +422,13 @@ To reach true industry-grade, the project would need the folowing enhancements:
 
 ## 📜License
 
-This project is licensed under the MIT License - see [LICENSE] file for details.
+This project is licensed under the MIT License - see [LICENSE](https://github.com/GideonLartey/hotel-management-system) file for details.
 
 
 ## 🤝Support
 
 For issues and questions:
-- Create an Issue on GitHub
+- Create an Issue on GitHub or fork it to improve the codebase.
 
 
 ## 📚 Authors
@@ -445,5 +438,3 @@ For issues and questions:
 
 ---
 
-## ⚠️Note: 
-This is a demonstration/educational project. For production use, it will need a proper database integration, security measures, and error handling.
